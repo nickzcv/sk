@@ -1,0 +1,44 @@
+.primary-menu .navbar-nav > li > a:hover,
+.primary-menu .navbar-nav > li.current-menu-item > a,
+#header-sticky .primary-menu .navbar-nav > li.current-menu-item > a {
+    color: #f6c41c !important;
+}
+.primary-menu .navbar-nav > li.back {
+    background-color: #f6c41c !important;
+}
+.widgets {
+    background-attachment: fixed;
+}
+#content-wrapper > .container {
+    background-size: inherit;
+}
+#content-wrapper > .container {
+    background-size: inherit;
+}
+.pro-slider {
+    margin-top: -100px !important;
+}
+.page-header .title-wrapper {
+    text-align: left;
+}
+.pro-breadcrumb {
+    right: 15px;
+}
+.sb-icon-search,
+a.shopping-cart {
+    color: #ffffff;
+}
+#header-sticky {
+    background-color: #ffffff !important;
+}
+#header-sticky {
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+#header-sticky .primary-menu .navbar-nav > li > a {
+    color: #2c3e50 !important;
+    font-family: Lato !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 14px !important;
+    line-height: 75px !important;
+}

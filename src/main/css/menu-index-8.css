@@ -1,0 +1,109 @@
+.primary-menu .navbar-nav > li > a {
+    font-family: Lato;
+    text-transform: uppercase;
+    line-height: 24px;
+    font-weight: 700;
+    font-style: normal;
+    color: #222533;
+    font-size: 15px;
+}
+.page-header .title-wrapper {
+    height: 150px;
+}
+.page-header .title-wrapper h1 {
+    font-family: Lato;
+    line-height: 36px;
+    font-weight: 900;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 30px;
+}
+.page-header .title-wrapper span {
+    font-family: Lato;
+    line-height: 20px;
+    font-weight: 700;
+    font-style: normal;
+    color: #ffffff;
+    font-size: 16px;
+}
+body {
+    font-family: Lato;
+    line-height: 27px;
+    font-weight: normal;
+    font-style: normal;
+    color: #647886;
+    font-size: 13px;
+}
+.cont-padding {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+#content-wrapper {
+    background-color: #fff;
+    background-repeat: repeat;
+    background-position: center center;
+}
+.primary-menu > li > a:hover,
+.primary-menu .navbar-nav > li > a:hover,
+.primary-menu .navbar-nav > li.current-menu-item > a,
+#header-sticky .primary-menu .navbar-nav > li.current-menu-item > a {
+    color: #f7c51e;
+}
+.pro-btn-custom-5687710d75c1c {
+    background-color: #f7c605;
+    color: #ffffff!important;
+}
+.pro-btn-custom-5687710d75c1c:hover {
+    background-color: #f7c605;
+}
+.specific_4499 .pro-testimonial-text:after {
+    background-color: !important;
+}
+.brochure-box-5687710d82e54 {
+    background-color: #2c3e50;
+}
+.brochure-box-5687710d82e54:hover {
+    background-color: #f7c51e;
+}
+.brochure-box__text5687710d82e54 {
+    color: #ffffff;
+}
+.brochure-box-5687710d82e54:hover .brochure-box__text5687710d82e54 {
+    color: #1a1c27!important;
+}
+.brochure-box-5687710d82e54 i {
+    color: #ffffff;
+}
+.brochure-box-5687710d82e54:hover i {
+    color: #1a1c27!important;
+}
+.brochure-box-5687710d8302e {
+    background-color: #2c3e50;
+}
+.brochure-box-5687710d8302e:hover {
+    background-color: #f7c51e;
+}
+.brochure-box__text5687710d8302e {
+    color: #ffffff;
+}
+.brochure-box-5687710d8302e:hover .brochure-box__text5687710d8302e {
+    color: #1a1c27!important;
+}
+.brochure-box-5687710d8302e i {
+    color: #ffffff;
+}
+.brochure-box-5687710d8302e:hover i {
+    color: #1a1c27!important;
+}
+#header-sticky.fixed .container {
+    width: 100%;
+}
+.primary-menu .navbar-nav > li > a {
+    line-height: 100px;
+}
+.open-search:hover {
+    color: #f6c41c;
+}
+.cart-info .shopping-cart:hover {
+    color: #f6c41c;
+}
