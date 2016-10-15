@@ -11,7 +11,7 @@ var favicon    = require('serve-favicon');
 var winston    = require('winston');
 var mongoose   = require('mongoose');
 
-mongoose.connect('localhost:27017/how_by'); // connect to our database
+mongoose.connect('localhost:27017/sk_db'); // connect to our database
 
 
 // configure app to use bodyParser()
@@ -19,13 +19,13 @@ mongoose.connect('localhost:27017/how_by'); // connect to our database
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//  __dirname == /server
+//  __dirname == /
 // set the static files location /src/css will be /css for users
-app.use(express.static(path.join(__dirname, 'src/main')));
+app.use(express.static(path.join(__dirname, 'src')));
 
 
 // serve favicon
-app.use(favicon(path.join(__dirname, 'src/main/images/favicons/favicon.ico')));
+app.use(favicon(path.join(__dirname, 'src/images/favicons/favicon.ico')));
 
 
 // Set up a logger.
@@ -41,14 +41,14 @@ app.use(function (req, res, next) {
 });
 
 
-// ROUTES FOR OUR API
+// ROUTES
 // =============================================================================
 var customers = require(path.join(__dirname, 'api/customers'));
 var contractors = require(path.join(__dirname, 'api/contractors'));
 var orders = require(path.join(__dirname, 'api/orders'));
 
 
-// REGISTER OUR ROUTES -------------------------------
+// REGISTER ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', customers);
 app.use('/api', contractors);
@@ -60,7 +60,7 @@ app.use(function (req, res) {
 	res
 		.status(404)
 		// index for a while
-		.sendFile(path.join(__dirname, '../app/urban/index.html'));
+		.sendFile(path.join(__dirname, 'src/404.html'));
 });
 
 
