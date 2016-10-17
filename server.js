@@ -11,6 +11,7 @@ var favicon    = require('serve-favicon');
 var winston    = require('winston');
 var mongoose   = require('mongoose');
 
+
 mongoose.connect('localhost:27017/sk_db'); // connect to our database
 
 
@@ -43,16 +44,17 @@ app.use(function (req, res, next) {
 
 // ROUTES
 // =============================================================================
-var customers = require(path.join(__dirname, 'api/customers'));
-var contractors = require(path.join(__dirname, 'api/contractors'));
-var orders = require(path.join(__dirname, 'api/orders'));
+
+var pages = require(path.join(__dirname, 'server/api/pages'));
+var categories = require(path.join(__dirname, 'server/api/categories'));
 
 
 // REGISTER ROUTES -------------------------------
 // all of our routes will be prefixed with /api
-app.use('/api', customers);
-app.use('/api', contractors);
-app.use('/api', orders);
+
+app.use('/api', pages);
+app.use('/api', categories);
+
 
 
 // Handle 404 (page not found).

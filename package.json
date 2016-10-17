@@ -9,6 +9,7 @@
     "mongoose"       : "4.6.0",
     "body-parser"    : "latest",
     "winston"        : "latest",
-    "serve-favicon"  : "latest"
+    "serve-favicon"  : "latest",
+    "speakingurl": "latest"
   }
 }

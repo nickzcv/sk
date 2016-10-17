@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();              // get an instance of the express Router
+var getSlug = require('speakingurl');
 
 //Define mongoose Schema
 var Category = require('../models/category');
@@ -14,9 +15,8 @@ router.route('/categories')
 		var category = new Category();
 
 		category.title = req.body.title;
-		category.slug = req.body.slug;
+		category.slug = getSlug( category.title );
 		category.description = req.body.description;
-		category.img= req.body.img;
 
 		// save and check for errors
 		category.save(function(err) {
@@ -61,9 +61,8 @@ router.route('/categories/:category_id')
 				res.send(err);
 
 			category.title = req.body.title;
-			category.slug = req.body.slug;
+			category.slug = getSlug( category.title );
 			category.description = req.body.description;
-			category.img= req.body.img;
 
 			category.save(function(err) {
 				if (err)
