@@ -24,7 +24,7 @@ Index css
     margin-bottom: 50px !important;
 }
 #uvc-type-wrap{
-    font-family:'Lato';
+     
     font-weight:900;
     font-size:30px;
     color:#2c3e50;
@@ -43,7 +43,7 @@ Index css
     display:block;
 }
 #uvc-main-heading-1{
-    font-family:'Lato';
+     
     font-weight:300;
 }
 #uvc-main-heading-2{
@@ -53,7 +53,7 @@ Index css
     font-weight: normal;
 }
 #uvc-sub-heading-2{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#a1b1bc;
 }
@@ -63,7 +63,7 @@ Index css
     margin-bottom:15px;
 }
 #uvc-sub-heading-989{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#ffffff;
 }
@@ -109,14 +109,14 @@ Index css
 #aio-icon-description-222,
 #aio-icon-description-999,
 #aio-icon-description-111{
-    font-family:'Lato';
+     
     font-weight:300;
     font-size:14px;
     line-height:24px;
     color:#a1b1bc;
 }
 .aio-icon-title{
-    font-family:'Lato';
+     
     font-weight:700;
     font-size:18px;
     color:#2c3e50;
@@ -129,13 +129,13 @@ Index css
 #aio-icon-title-6,
 #aio-icon-title-7,
 #aio-icon-title-8{
-    font-family:'Lato';
+     
     font-weight:700;
     font-size:18px;
     color:#2c3e50;
 }
 #aio-icon-title-001{
-    font-family:'Lato';
+     
     font-weight:700;
     font-size:17px;
     line-height:29px;
@@ -156,27 +156,27 @@ Index css
     color:#a1b1bc;
 }
 #aio-icon-description-990{
-    font-family:'Lato';
+     
     font-weight:300;
     font-size:14px;
     line-height:24px;
     color:#a1b1bc;
 }
 #uvc-main-heading-2 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#ffffff;
     margin-top: 100px;
 }
 #uvc-main-heading-3 > h2,
 #uvc-main-heading-4 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#ffffff;
 }
 #uvc-main-heading-101 > h2,
 #uvc-main-heading-353 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#2c3e50;
 }
@@ -184,13 +184,13 @@ Index css
 #uvc-main-heading-8 > h2,
 #uvc-main-heading-9 > h2,
 #uvc-main-heading-10 > h2{
-    font-family:'Lato';
+     
     font-weight:700;
     color:#ffffff;
     margin-bottom:15px;
 }
 #uvc-main-heading-11 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#2c3e50;
 }
@@ -202,7 +202,7 @@ Index css
 #uvc-sub-heading-12,
 #uvc-sub-heading-13,
 #uvc-sub-heading-14{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#a1b1bc;
 }
@@ -218,7 +218,7 @@ Index css
 }
 .ubtn{
 /*
-    font-family:'Lato';
+     
     font-weight:normal;
     font-style:normal;
     font-size:16px;
@@ -362,7 +362,7 @@ Index css
 .stats-text{
     font-size:22px; 
     color:#ffffff; 
-    font-family:'Lato';
+     
     font-weight:300;
     font-size:18px;
 }
@@ -372,7 +372,7 @@ Index css
 #counter_15983757585684bafcaf62c{
     font-size:70px; 
     color:#ffffff; 
-    font-family:'Lato';
+     
     font-weight:300;
     font-size:70px;
     line-height:78px;
@@ -623,7 +623,7 @@ Index css 2
 index 3 css
 ==============================*/
 #uvc-main-heading-1000 > h2{
-    font-family:'Lato';
+     
     font-weight:300;
     margin-bottom:20px;
 }
@@ -653,13 +653,13 @@ index 3 css
     border-color:#a1b1bc;
 }
 .info-circle-heading{
-    font-family:'Lato';
+     
     font-weight:700;
     font-size:24px;
     line-height:32px;
 }
 .info-circle-text{
-    font-family:'Lato';
+     
     font-weight:normal;
     line-height:24px;
 }
@@ -758,13 +758,13 @@ index 5 css
 Index 6 css
 ==========================*/
 #uvc-main-heading-007 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#ffffff;
     margin-top:20px;
 }
 #uvc-main-heading-1007 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#222;
     margin-top:20px;
@@ -780,7 +780,7 @@ Index 6 css
     display:inline-block;
 }
 #uvc-sub-heading-008{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#a1b1bc;
 }
@@ -790,7 +790,7 @@ Index 6 css
     display:block;
 }
 #ubtn-007{
-    font-family:'Lato';
+     
     font-weight:900;
     font-size:18px;
     border:none;
@@ -819,7 +819,7 @@ index 7 css
     display:inline-block;
 }
 .aio-icon-title{
-    font-family:'Lato';
+     
     font-weight:700;
     font-size:18px;
     color:#2c3e50;
@@ -828,7 +828,7 @@ index 7 css
     color:#222533;
 }
 #uvc-type-wrap-0078{
-    font-family:'Lato';
+     
     font-weight:900;
     font-size:58px;
     line-height:65px;
@@ -917,7 +917,7 @@ index 7 css
     display:inline-block;
 }
 #uvc-main-heading-2a > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#2e3841;
     margin-top:5px;
@@ -925,7 +925,7 @@ index 7 css
 }
 #uvc-sub-heading-3a,
 #uvc-sub-heading-2a{
-    font-family:'Lato';
+     
     font-weight:normal;
     font-style:normal;
     color:#2e3841;
@@ -937,38 +937,38 @@ index 7 css
 .stats-text-010{
     font-size:18px; 
     color:#f8c506; 
-    font-family:'Lato';
+     
 }
 .stats-number-020{
     font-size:28px; 
     color:#f8c506; 
-    font-family:'Lato';
+     
     font-weight:900;
 }
 #uvc-main-heading-050 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#2e3841;
     margin-top:5px;
     margin-bottom:5px;
 }
 #uvc-main-heading-290 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#2e3841;
     margin-top:5px;
     margin-bottom:5px;
 }
 #uvc-sub-heading-077{
-    font-family:'Lato';
-    font-weight:normal;
+     
+    fo nt-weight:normal;
     font-style:normal;
     color:#2e3841;
     margin-top:15px;
 }
 #uvc-sub-heading-09c,
 #uvc-sub-heading-0ac{
-    font-family:'Lato';
+    
     font-weight:normal;
     font-style:normal;
     color:#ffffff;
@@ -978,7 +978,7 @@ index 7 css
 }
 #ubtn-ctn-center-2,
 #ubtn-ctn-center-1{
-    font-family:'Lato' !important;
+    
     font-weight:normal !important;
     font-size:18px !important;
     width:px !important;
@@ -989,20 +989,20 @@ index 7 css
     color: #000000 !important;
 }
 #uvc-main-heading-0ac > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#ffffff;
 }
 #uvc-main-heading-00q > h2
 #uvc-main-heading-00p > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#2e3841;
     margin-top:5px;
     margin-bottom:5px;
 }
 #uvc-main-heading-07a > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#ffffff;
 }
@@ -1136,12 +1136,12 @@ advanced-carousel-css
     display:inline-block;
 }
 #uvc-main-heading-0921 > h2{
-    font-family:'Lato';
+     
     font-weight:300;
     margin-bottom:20px;
 }
 .uvc-sub-heading{
-    font-family:'Lato';
+     
     font-weight:normal;
 }
 #aio-icon-header2 > h3,
@@ -1172,19 +1172,19 @@ advanced-carousel-css
     color:#2e2e2e;
 }
 #uvc-main-heading2020 > h2{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#ffffff;
     margin-bottom:20px;
 }
 #uvc-sub-heading-9090{
-    font-family:'Lato';
+     
     font-style:italic;
     font-weight:normal;
     color:#ffffff;
 }
 #uvc-main-heading-0101 > h2{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#ffffff;
     margin-bottom:5px;
@@ -1194,12 +1194,12 @@ advanced-carousel-css
     display:inline-block;
 }
 #uvc-sub-heading-2009{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#ffffff;
 }
 #buy-button{
-    font-family:'Lato';
+     
     font-weight:900;
     font-size:14px;
     width:220px;
@@ -1312,6 +1312,7 @@ advanced-carousel-css
 }
 .primary-menu .navbar-nav > li > a {
     font-family: "Open Sans", sans-serif;
+    font-size: 14px;
 }
 .primary-menu .navbar-nav > li.back {
     background-color: #f6c41c !important;
@@ -1354,7 +1355,6 @@ a.shopping-cart {
 }
 #header-sticky .primary-menu .navbar-nav > li > a {
     color: #2c3e50 !important;
-    font-family: Lato !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     font-size: 14px !important;
@@ -1380,14 +1380,14 @@ a.shopping-cart {
     
 }
 #uvc-main-heading-07908 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     margin-bottom:30px;
 }
 #uvc-main-2015 > h2,
 #uvc-main-heading-9010 > h2,
 #uvc-main-heading-01230 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     margin-top:30px;
 /*    margin-bottom:20px;*/
@@ -1413,7 +1413,7 @@ a.shopping-cart {
 #counter_8851342855695143a2a83b{
     font-size:28px; 
     color:#ffffff; 
-    font-family:'Lato';
+     
     font-weight:900;
     font-size:36px;
     color:#ffffff;
@@ -1421,13 +1421,13 @@ a.shopping-cart {
 .stats-007{
     font-size:22px; 
     color:#ffffff; 
-    font-family:'Lato';
+     
     font-weight:normal;
     font-style:normal;
     font-size:16px;
 }
 #uvc-main-2016 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#2c3e50;
 }
@@ -1442,12 +1442,12 @@ a.shopping-cart {
     display:inline-block;
 }
 #uvc-sub-heading-111{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#a1b1bc;
 }
 #uvc-main-heading-2018 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     color:#ffffff;
 }
@@ -1463,14 +1463,14 @@ a.shopping-cart {
     width:70px;
 }
 #uvc-sub-heading-231{
-    font-family:'Lato';
+     
     font-weight:normal;
     font-style:normal;
     color:#ffffff;
     margin-bottom:40px;
 }
 #ubtn-11{
-    font-family:'Lato';
+     
     font-weight:900;
     font-size:21px;
     width:250px;
@@ -1481,7 +1481,7 @@ a.shopping-cart {
     color: #f6c41c;
 }
 #ubtn-12{
-    font-family:'Lato';
+     
     font-weight:900;
     font-size:21px;
     width:250px;
@@ -1556,19 +1556,19 @@ a.shopping-cart {
 }
 /*
 .uvc-main-heading > h2{
-     font-family:'Lato';
+      
     font-weight:300;
     margin-bottom:20px;
 }
 */
 .uvc-main-heading-2006 > h2{
-    font-family:'Lato';
+     
     font-weight:300;
     color:#ffffff;
     margin-bottom:5px;
 }
 .uvc-main-heading-2008 > h2{
-    font-family:'Lato';
+     
     font-weight:300;
 }
 .pro-alert-2001 > p > span{
@@ -1586,7 +1586,7 @@ a.shopping-cart {
     color:#ffffff;
 }
 .uvc-main-heading-2012 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     margin-bottom:25px;
 }
@@ -1596,13 +1596,13 @@ a.shopping-cart {
     height:2px;
 }
 #uvc-main-heading-2020 > h2{
-    font-family:'Lato';
+     
     font-weight:300;
     margin-bottom:20px;
 }
 #uvc-main-heading-2022 > h2,
 #uvc-main-heading-2021 > h2{
-    font-family:'Lato';
+     
     font-weight:300;
 }
 .background-image{
@@ -1613,7 +1613,7 @@ a.shopping-cart {
 }
 
 .uvc-main-heading-2050 > h2{
-    font-family:'Lato';
+     
     font-weight:900;
     margin-bottom:20px;
 }
@@ -1623,7 +1623,7 @@ a.shopping-cart {
     display:inline-block !important;
 }
 .uvc-main-heading-2055 > h2{
-    font-family:'Lato' !important;
+    
     font-weight:900 !important;
     margin-bottom:20px !important;
 }
@@ -1634,41 +1634,41 @@ a.shopping-cart {
     width:50px !important;
 }
 .uvc-sub-heading-2055{
-    font-family:'Lato' !important;
+    
     font-weight:normal !important;
     font-style:normal !important;
     margin-top:15px !important;
     margin-bottom:30px !important;
 }
 .uvc-main-heading-2058 > h2{
-    font-family:'Lato' !important;
+    
     font-weight:900 !important;
     margin-top:15px !important;
     margin-bottom:20px !important;
 }
 .uvc-main-heading-280 > h2{
-    font-family:'Lato' !important;
+    
     font-weight:700 !important;
     color:#2c3e50 !important;
     margin-bottom:5px !important;
 }
 .uvc-sub-heading-259{
-    font-family:'Lato' !important ;
+
     font-weight:300 !important;
     margin-bottom:15px !important;
 }
 .uvc-main-heading-2222 > h2{
-    font-family:'Lato' !important;
+    
     font-weight:300 !important;
     color:#ffffff !important;
 }
 .uvc-sub-heading-white{
-    font-family:'Lato' !important;
+    
     font-weight:normal !important;
     color:#ffffff !important;
 }
 .uvc-main-heading-white > h2{
-    font-family:'Lato' !important;
+    
     font-weight:300 !important;
 }
 .uvc-wrap-490618269568fe5ce4f19f .typed-cursor {
@@ -1678,19 +1678,19 @@ a.shopping-cart {
     color:#ffffff;
 }
 .uvc-main-heading-20000 > h2{
-    font-family:'Lato' !important;
+    
     font-weight:900 !important;
     color:#2c3e50 !important;
     margin-bottom:15px !important;
 }
 .uvc-sub-heading-20000{
-    font-family:'Lato' !important;
+    
     font-weight:300 !important;
     color:#a1b1bc !important;
     margin-top:15px !important;
 }
 .uvc-main-1-heading > h2{
-    font-family:'Lato' !important;
+    
     font-weight:300 !important;
     margin-top:25px !important;
     margin-bottom:25px !important;

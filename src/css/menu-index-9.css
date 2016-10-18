@@ -1,5 +1,5 @@
 .primary-menu .navbar-nav > li > a {
-    font-family: Lato;
+
     text-transform: uppercase;
     line-height: 24px;
     font-weight: 700;
@@ -11,7 +11,7 @@
     height: 150px;
 }
 .page-header .title-wrapper h1 {
-    font-family: Lato;
+
     line-height: 36px;
     font-weight: 900;
     font-style: normal;
@@ -19,7 +19,7 @@
     font-size: 30px;
 }
 .page-header .title-wrapper span {
-    font-family: Lato;
+
     line-height: 20px;
     font-weight: 700;
     font-style: normal;
@@ -27,7 +27,7 @@
     font-size: 16px;
 }
 body {
-    font-family: Lato;
+
     line-height: 27px;
     font-weight: normal;
     font-style: normal;

@@ -3,7 +3,7 @@
     padding-left: 15px;
 }
 .primary-menu .navbar-nav > li > a {
-    font-family: Lato;
+
     text-transform: uppercase;
     line-height: 24px;
     font-weight: 700;
@@ -15,7 +15,7 @@
     height: 400px;
 }
 .page-header .title-wrapper h1 {
-    font-family: Lato;
+
     line-height: 50px;
     font-weight: 900;
     font-style: normal;
@@ -23,7 +23,7 @@
     font-size: 48px;
 }
 .page-header .title-wrapper span {
-    font-family: Lato;
+
     line-height: 26px;
     font-weight: 400;
     font-style: normal;
@@ -31,7 +31,7 @@
     font-size: 22px;
 }
 body {
-    font-family: Lato;
+
     line-height: 27px;
     font-weight: normal;
     font-style: normal;
@@ -108,7 +108,7 @@ body {
     padding-left: 15px;
 }
 .primary-menu .navbar-nav > li > a {
-    font-family: Lato;
+
     text-transform: uppercase;
     line-height: 24px;
     font-weight: 700;
@@ -120,7 +120,7 @@ body {
     height: 400px;
 }
 .page-header .title-wrapper h1 {
-    font-family: Lato;
+
     line-height: 50px;
     font-weight: 900;
     font-style: normal;
@@ -128,7 +128,7 @@ body {
     font-size: 48px;
 }
 .page-header .title-wrapper span {
-    font-family: Lato;
+
     line-height: 26px;
     font-weight: 400;
     font-style: normal;
@@ -136,7 +136,7 @@ body {
     font-size: 22px;
 }
 body {
-    font-family: Lato;
+
     line-height: 27px;
     font-weight: normal;
     font-style: normal;

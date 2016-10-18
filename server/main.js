@@ -21,8 +21,8 @@ router.get('/', function(req, res) {
 
 
 // define the about route
-router.get('/about', function(req, res) {
-  res.send('About ');
+router.get('/contacts', function(req, res) {
+  res.send('contacts ');
 });
 
 
