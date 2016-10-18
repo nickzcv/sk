@@ -9,7 +9,7 @@ var PageSchema   = new Schema({
 	img: String,
 	created_at: Date,
 	updated_at: Date,
-	main: false,
+	main: { type: Boolean, default: false },
 	categories : []
 });
 

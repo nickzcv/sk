@@ -10,6 +10,7 @@
     "body-parser"    : "latest",
     "winston"        : "latest",
     "serve-favicon"  : "latest",
-    "speakingurl": "latest"
+    "speakingurl": "latest",
+    "express-handlebars": "latest"
   }
 }

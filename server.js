@@ -10,6 +10,7 @@ var bodyParser = require('body-parser');
 var favicon    = require('serve-favicon');
 var winston    = require('winston');
 var mongoose   = require('mongoose');
+var exphbs 	   = require('express-handlebars');
 
 
 mongoose.connect('localhost:27017/sk_db'); // connect to our database
@@ -41,16 +42,39 @@ app.use(function (req, res, next) {
 	next();
 });
 
+// Location for static content.
+//app.locals.static_root = '/src';
+
+// Initialise handleabars with helpers.
+app.set('view engine', 'handlebars');
+app.engine('handlebars', exphbs({
+	helpers: {
+		'static-root': function (data) {
+			return '/src/';
+		}
+	}
+}));
+
+// Set 'template_data' variable that will be used with all template rendering.
+app.use(function (req, res, next) {
+	res.locals.template_data = {
+		layout: 'main',
+		meta_title: 'СтройКрепость ОДО'
+	};
+	next();
+});
+
 
 // ROUTES
 // =============================================================================
 
+var main = require(path.join(__dirname, 'server/main'));
+
+app.use('/', main);
+
+
 var pages = require(path.join(__dirname, 'server/api/pages'));
 var categories = require(path.join(__dirname, 'server/api/categories'));
-
-
-// REGISTER ROUTES -------------------------------
-// all of our routes will be prefixed with /api
 
 app.use('/api', pages);
 app.use('/api', categories);
@@ -62,7 +86,7 @@ app.use(function (req, res) {
 	res
 		.status(404)
 		// index for a while
-		.sendFile(path.join(__dirname, 'src/404.html'));
+	 	.send(' 404 page');
 });
 
 
