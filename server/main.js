@@ -13,10 +13,10 @@ router.use(function timeLog(req, res, next) {
 
 /* Home page. */
 router.get('/', function(req, res) {
-  res.render('home', res.locals.template_data = {
-    layout: 'main',
-    meta_title: 'СтройКрепость'
-  });
+    res.render('home', res.locals.template_data = {
+        layout: 'main',
+        meta_title: 'СтройКрепость'
+    });
 });
 
 

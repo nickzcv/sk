@@ -74,10 +74,11 @@ app.use('/api', categories);
 
 // Handle 404 (page not found).
 app.use(function (req, res) {
-	res
-		.status(404)
-		// index for a while
-	 	.send(' 404 page');
+	res.status(404)
+		.render('home', res.locals.template_data = {
+		layout: 'main',
+		meta_title: ''
+	});
 });
 
 

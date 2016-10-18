@@ -1310,6 +1310,9 @@ advanced-carousel-css
 #header-sticky .primary-menu .navbar-nav > li.current-menu-item > a {
     color: #f6c41c !important;
 }
+.primary-menu .navbar-nav > li > a {
+    font-family: "Open Sans", sans-serif;
+}
 .primary-menu .navbar-nav > li.back {
     background-color: #f6c41c !important;
 }
