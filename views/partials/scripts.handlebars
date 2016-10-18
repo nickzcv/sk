@@ -1,0 +1,314 @@
+<script type="text/javascript">
+	/******************************************
+	 -	PREPARE PLACEHOLDER FOR SLIDER	-
+	 ******************************************/
+	var setREVStartSize = function() {
+		try {
+			var e = new Object,
+					i = jQuery(window).width(),
+					t = 9999,
+					r = 0,
+					n = 0,
+					l = 0,
+					f = 0,
+					s = 0,
+					h = 0;
+			e.c = jQuery('#rev_slider_8_1');
+			e.gridwidth = [780];
+			e.gridheight = [543];
+
+			e.sliderLayout = "auto";
+			if (e.responsiveLevels && (jQuery.each(e.responsiveLevels, function(e, f) {
+						f > i && (t = r = f, l = e), i > f && f > r && (r = f, n = e)
+					}), t > r && (l = n)), f = e.gridheight[l] || e.gridheight[0] || e.gridheight, s = e.gridwidth[l] || e.gridwidth[0] || e.gridwidth, h = i / s, h = h > 1 ? 1 : h, f = Math.round(h * f), "fullscreen" == e.sliderLayout) {
+				var u = (e.c.width(), jQuery(window).height());
+				if (void 0 != e.fullScreenOffsetContainer) {
+					var c = e.fullScreenOffsetContainer.split(",");
+					if (c) jQuery.each(c, function(e, i) {
+						u = jQuery(i).length > 0 ? u - jQuery(i).outerHeight(!0) : u
+					}), e.fullScreenOffset.split("%").length > 1 && void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 ? u -= jQuery(window).height() * parseInt(e.fullScreenOffset, 0) / 100 : void 0 != e.fullScreenOffset && e.fullScreenOffset.length > 0 && (u -= parseInt(e.fullScreenOffset, 0))
+				}
+				f = u
+			} else void 0 != e.minHeight && f < e.minHeight && (f = e.minHeight);
+			e.c.closest(".rev_slider_wrapper").css({
+				height: f
+			})
+
+		} catch (d) {
+			console.log("Failure at Presize of Slider:" + d)
+		}
+	};
+
+
+	setREVStartSize();
+
+	function revslider_showDoubleJqueryError(sliderID) {
+		var errorMessage = "Revolution Slider Error: You have some jquery.js library include that comes after the revolution files js include.";
+		errorMessage += "<br> This includes make eliminates the revolution slider libraries, and make it not work.";
+		errorMessage += "<br><br> To fix it you can:<br>&nbsp;&nbsp;&nbsp; 1. In the Slider Settings -> Troubleshooting set option:  <strong><b>Put JS Includes To Body</b></strong> option to true.";
+		errorMessage += "<br>&nbsp;&nbsp;&nbsp; 2. Find the double jquery.js include and remove it.";
+		errorMessage = "<span style='font-size:16px;color:#BC0C06;'>" + errorMessage + "</span>";
+		jQuery(sliderID).show().html(errorMessage);
+	}
+	var tpj = jQuery;
+	tpj.noConflict();
+	var revapi8;
+	tpj(document).ready(function() {
+		if (tpj("#rev_slider_8_1").revolution == undefined) {
+			revslider_showDoubleJqueryError("#rev_slider_8_1");
+		} else {
+			revapi8 = tpj("#rev_slider_8_1").show().revolution({
+				sliderType: "standard",
+				jsFileLocation: "//webuild.netbee.co/demo/wp-content/plugins/revslider/public/assets/js/",
+				sliderLayout: "auto",
+				dottedOverlay: "none",
+				delay: 9000,
+				navigation: {
+					keyboardNavigation: "off",
+					keyboard_direction: "horizontal",
+					mouseScrollNavigation: "off",
+					onHoverStop: "on",
+					touch: {
+						touchenabled: "on",
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						swipe_direction: "horizontal",
+						drag_block_vertical: false
+					},
+					arrows: {
+						style: "hesperiden",
+						enable: true,
+						hide_onmobile: false,
+						hide_onleave: false,
+						tmp: '',
+						left: {
+							h_align: "left",
+							v_align: "center",
+							h_offset: 20,
+							v_offset: 0
+						},
+						right: {
+							h_align: "right",
+							v_align: "center",
+							h_offset: 20,
+							v_offset: 0
+						}
+					}
+				},
+				visibilityLevels: [1240, 1024, 778, 480],
+				gridwidth: 780,
+				gridheight: 543,
+				lazyType: "none",
+				shadow: 0,
+				spinner: "spinner0",
+				stopLoop: "off",
+				stopAfterLoops: -1,
+				stopAtSlide: -1,
+				shuffle: "off",
+				autoHeight: "off",
+				disableProgressBar: "on",
+				hideThumbsOnMobile: "off",
+				hideSliderAtLimit: 0,
+				hideCaptionAtLimit: 0,
+				hideAllCaptionAtLilmit: 0,
+				debugMode: false,
+				fallbacks: {
+					simplifyAll: "off",
+					nextSlideOnWindowFocus: "off",
+					disableFocusListener: false,
+				}
+			});
+		}
+	}); /*ready*/
+
+	/*=========================
+   ultimate type writer
+   ==========================*/
+	jQuery(function($) {
+		$("#typed-14476637225684bafc8963b").typed({
+			strings: ["PERFECT FOR YOUR BUSINESS", "SEO OPTIMIZED", "LOADING FAST", "FULLY RESPONSIVE", "RETINA READY", "FLEXIBLE", "BEAUTIFUL", "ESPECIALLY", "WHAT YOU NEED"],
+			typeSpeed: 25,
+			backSpeed: 0,
+			startDelay: 200,
+			backDelay: 1500,
+			loop: true,
+			loopCount: false,
+			showCursor: true,
+			cursorChar: "|",
+			attr: null
+		});
+	});
+	/*===============================
+   index carousel js 1
+   ================================*/
+	jQuery(".specific_9827").slick({
+		slidesToShow: 4,
+		sliderToScroll: 1,
+		arrows: true,
+		lazyLoad: "ondemand",
+		autoplay: true,
+		arrows: true,
+		dots: true,
+		responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3
+			}
+		}, {
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		}, {
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}]
+	});
+
+	/*==============================
+    index carousel js 2
+    =================================*/
+	jQuery(".specific_74590").slick({
+		slidesToShow: 6,
+		sliderToScroll: 1,
+		lazyLoad: "ondemand",
+		autoplay: "true",
+		arrows: true,
+		dots: true,
+		responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3
+			}
+		}, {
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		}, {
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}]
+	});
+
+	/*===========================
+    Plugin Minify js
+    =============================*/
+	var webuild_ajax = {
+		"ajaxurl": "https:\/\/webuild.netbee.co\/demo\/wp-admin\/admin-ajax.php",
+		"sticky": "0",
+		"compactMenu": "",
+		"footerEffect": "1",
+		"footerForm": "1",
+		"showFooter": "1"
+	};
+
+
+
+	/*=============================
+
+    =============================*/
+	jQuery(".specific_6430").slick({
+		slidesToShow: 4,
+		sliderToScroll: 1,
+		arrows: true,
+		lazyLoad: "ondemand",
+		autoplay: true,
+		arrows: true,
+		dots: true,
+		responsive: [{
+			breakpoint: 1024,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 3
+			}
+		}, {
+			breakpoint: 600,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		}, {
+			breakpoint: 480,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}]
+	});
+
+
+	/* =================================
+            ===  CONTACT FORM               ====
+            =================================== */
+
+	(function ($) {
+		$("#contact").submit(function (e) {
+			e.preventDefault();
+			var name = $("#cf-name").val();
+			var email = $("#cf-email").val();
+			var subject = $("#cf-subject").val();
+			var message = $("#cf-message").val();
+			var dataString = 'name=' + name + '&email=' + email + '&subject=' + subject + '&message=' + message;
+
+			function isValidEmail(emailAddress) {
+				var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
+				return pattern.test(emailAddress);
+			};
+			if (isValidEmail(email) && (message.length > 1) && (name.length > 1)) {
+				$.ajax({
+					type: "POST",
+					url: "sendmail.php",
+					data: dataString,
+					success: function () {
+						$('.success').fadeIn(1000);
+						$('.error').fadeOut(500);
+					}
+				});
+			} else {
+				$('.error').fadeIn(1000);
+				$('.success').fadeOut(500);
+			}
+			return false;
+		});
+
+
+	})(jQuery);
+</script>
+
+<!-- contact-form js -->
+<script type='text/javascript' src='js/jquery.form.min.js'></script>
+<!-- scripts js -->
+<script type='text/javascript' src='js/scripts.js'></script>
+<!-- woocompare js -->
+<script type='text/javascript' src='js/woocompare.js'></script>
+<!-- colorbox js -->
+<script type='text/javascript' src='js/jquery.colorbox-min.js'></script>
+<!-- selectBox js -->
+<script type='text/javascript' src='js/jquery.selectBox.min.js'></script>
+<!-- yith-wcwl js -->
+<script type='text/javascript' src='js/jquery.yith-wcwl.js'></script>
+<!-- comment-reply js -->
+<script type='text/javascript' src='js/comment-reply.min.js'></script>
+<!-- bootstrap js -->
+<script type='text/javascript' src='js/vendor/bootstrap.min.js'></script>
+<!-- plugin-min js -->
+<script type='text/javascript' src='js/jquery.plugins.min.js'></script>
+<!-- jquery.script js -->
+<script type='text/javascript' src='js/jquery.script.js'></script>
+<!-- composer front js -->
+<script type='text/javascript' src='js/js_composer_front.js'></script>
+<!-- parallax js -->
+<script type='text/javascript' src='js/parallax.min.js'></script>
+<!-- custom js -->
+<script type='text/javascript' src='js/custom.js'></script>

@@ -11,9 +11,12 @@ router.use(function timeLog(req, res, next) {
 });
 
 
-// define the home page route
+/* Home page. */
 router.get('/', function(req, res) {
-  res.send(' home page');
+  res.render('home', res.locals.template_data = {
+    layout: 'main',
+    meta_title: 'СтройКрепость'
+  });
 });
 
 

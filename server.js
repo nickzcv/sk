@@ -50,19 +50,10 @@ app.set('view engine', 'handlebars');
 app.engine('handlebars', exphbs({
 	helpers: {
 		'static-root': function (data) {
-			return '/src/';
+			return '';
 		}
 	}
 }));
-
-// Set 'template_data' variable that will be used with all template rendering.
-app.use(function (req, res, next) {
-	res.locals.template_data = {
-		layout: 'main',
-		meta_title: 'СтройКрепость ОДО'
-	};
-	next();
-});
 
 
 // ROUTES
