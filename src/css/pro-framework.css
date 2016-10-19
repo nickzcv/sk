@@ -713,3 +713,9 @@
     content: "\0041";
     color:#f7c605 !important;
 }
+.logo-icon:before  {
+    font-family: 'Glyphter';
+    content: "\0041";
+    font-size: 24px;
+    font-style: normal;
+}
