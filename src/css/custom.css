@@ -1957,3 +1957,14 @@ a.shopping-cart {
     transition: all 0.5s;
     text-align: center;
 }
+
+
+.logo a {
+    height: 60px;
+    width: 220px;
+}
+
+.top-footer {
+    padding: 0;
+    height: 666px;
+}
