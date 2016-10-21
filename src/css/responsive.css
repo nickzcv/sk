@@ -75,12 +75,7 @@
 }
 @media only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi) {
 
-	.logo .retina, .retina {
-		display: inline-block !important;
-	}
-	.logo .normal, .normal {
-		display: none !important;
-	}
+ 
 
 }
 @media (min-width: 991px) {
