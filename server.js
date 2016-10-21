@@ -11,6 +11,7 @@ var favicon    = require('serve-favicon');
 var winston    = require('winston');
 var mongoose   = require('mongoose');
 var exphbs 	   = require('express-handlebars');
+var basic_auth = require('basic-auth');
 
 
 mongoose.connect('localhost:27017/sk_db'); // connect to our database
@@ -55,6 +56,22 @@ app.engine('handlebars', exphbs({
 	}
 }));
 
+app.locals.unauthorized = function (res) {
+	res.set('WWW-Authenticate', 'Basic realm=Authorization Required');
+	return res.sendStatus(401);
+};
+// Auth
+var auth = function (req, res, next) {
+	var user = basic_auth(req);
+	if (!user || !user.name || !user.pass)
+		return req.app.locals.unauthorized(res);
+
+	if (user.name === 'ukrep' && user.pass === 'ukrep')
+		return next();
+
+	return req.app.locals.unauthorized(res);
+};
+
 
 // ROUTES
 // =============================================================================
@@ -64,9 +81,12 @@ var main = require(path.join(__dirname, 'server/main'));
 app.use('/', main);
 
 
+var mainApi = require(path.join(__dirname, 'server/api/main'));
 var pages = require(path.join(__dirname, 'server/api/pages'));
 var categories = require(path.join(__dirname, 'server/api/categories'));
 
+app.use('/api', auth);
+app.use('/api', mainApi);
 app.use('/api', pages);
 app.use('/api', categories);
 

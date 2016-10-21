@@ -11,6 +11,7 @@
     "winston"        : "latest",
     "serve-favicon"  : "latest",
     "speakingurl": "latest",
-    "express-handlebars": "latest"
+    "express-handlebars": "latest",
+    "basic-auth": "latest"
   }
 }
