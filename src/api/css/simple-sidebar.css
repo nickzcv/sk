@@ -74,10 +74,16 @@
     color: #999999;
 }
 
+.sidebar-nav li a.active {
+    text-decoration: none;
+    color: #fff;
+    background: rgba(89, 89, 89, 0.2);
+}
+
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
-    background: rgba(255,255,255,0.2);
+    background: rgba(143, 143, 143, 0.2);
 }
 
 .sidebar-nav li a:active,

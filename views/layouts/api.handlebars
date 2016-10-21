@@ -15,6 +15,7 @@
 
 	<!-- Custom CSS -->
 	<link href="css/simple-sidebar.css" rel="stylesheet">
+	<link href="css/api.css" rel="stylesheet">
 
 	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,17 +34,20 @@
 	<div id="sidebar-wrapper">
 		<ul class="sidebar-nav">
 			<li class="sidebar-brand">
-				<a href="/api/" class="active">ОДО СтройКрепость</a>
+				<a href="/api/" class="{{#if active.home}}active{{/if}}">ОДО СтройКрепость</a>
 			</li>
 
 			<li>
-				<a href="/api/news">Новости</a>
+				<a href="/api/news" class="{{#if active.news}}active{{/if}}">Новости</a>
 			</li>
 			<li>
-				<a href="/api/photos">Фотоархив</a>
+				<a href="/api/photos" class="{{#if active.photos}}active{{/if}}">Фотоархив</a>
 			</li>
 			<li>
-				<a href="/api/pages">Страницы</a>
+				<a href="/api/pages" class="{{#if active.pages}}active{{/if}}">Страницы</a>
+			</li>
+			<li>
+				<a href="/api/categories" class="{{#if active.categories}}active{{/if}}">Категории</a>
 			</li>
 			<li>
 				<a href="/">Выйти</a>

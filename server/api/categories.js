@@ -32,10 +32,14 @@ router.route('/categories')
 	.get(function(req, res) {
 
 		Category.find(function(err, category) {
-			if (err)
-				res.send(err);
+			if (err) throw err;
 
-			res.json(category);
+			res.render('api-categories', res.locals.template_data = {
+				layout: 'api',
+				active: { categories: true },
+				meta_title: 'Управление категориями',
+				category: category
+			});
 
 		});
 	});

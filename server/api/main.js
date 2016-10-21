@@ -8,7 +8,8 @@ var router = express.Router();              // get an instance of the express Ro
 router.get('/', function(req, res) {
 	res.render('api-home', res.locals.template_data = {
 		layout: 'api',
-		meta_title: 'Панель управления сайтом СтройКрепость'
+		active: { home: true },
+		meta_title: 'Панель управления сайтом'
 	});
 });
 
@@ -16,6 +17,7 @@ router.get('/', function(req, res) {
 router.get('/photos', function(req, res) {
 	res.render('api-photos', res.locals.template_data = {
 		layout: 'api',
+		active: { photos: true },
 		meta_title: 'Управление фотографиями'
 	});
 });
