@@ -20,10 +20,10 @@ router.route('/categories')
 
 		// save and check for errors
 		category.save(function(err) {
-			if (err)
-				res.send(err);
+			if (err) throw err;
 
-			res.json({ message: 'Category created!' });
+			 
+			res.redirect('/api/categories')
 		});
 
 	})
@@ -51,8 +51,7 @@ router.route('/categories/:category_id')
 // get by :category_id
 	.get(function(req, res) {
 		Category.findById(req.params.category_id, function(err, category) {
-			if (err)
-				res.send(err);
+			if (err) throw err;
 
 			res.json(category);
 		});
@@ -60,17 +59,14 @@ router.route('/categories/:category_id')
 	// update
 	.put(function(req, res) {
 		Category.findById(req.params.category_id, function(err, category) {
-
-			if (err)
-				res.send(err);
+			if (err) throw err;
 
 			category.title = req.body.title;
 			category.slug = getSlug( category.title );
 			category.description = req.body.description;
 
 			category.save(function(err) {
-				if (err)
-					res.send(err);
+				if (err) throw err;
 
 				res.json({ message: 'Category updated!' });
 			});
@@ -83,8 +79,7 @@ router.route('/categories/:category_id')
 		Category.remove({
 			_id: req.params.category_id
 		}, function(err, category) {
-			if (err)
-				res.send(err);
+			if (err) throw err;
 
 			res.json({ message: 'Successfully deleted' });
 		});

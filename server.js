@@ -85,7 +85,7 @@ var mainApi = require(path.join(__dirname, 'server/api/main'));
 var pages = require(path.join(__dirname, 'server/api/pages'));
 var categories = require(path.join(__dirname, 'server/api/categories'));
 
-//app.use('/api', auth);
+app.use('/api', auth);
 app.use('/api', mainApi);
 app.use('/api', pages);
 app.use('/api', categories);
