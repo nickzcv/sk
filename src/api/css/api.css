@@ -2,3 +2,23 @@
     background-color: #000;
     color: #fff;
 }
+
+form {
+    background: #dddddd;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+.edit {
+    cursor: pointer;
+    color: dodgerblue;
+}
+
+.delete {
+    color: red;
+    margin-left: 10px;
+    cursor: pointer;
+}

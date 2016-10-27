@@ -8,7 +8,7 @@
 
 				<form method="post">
 					<div class="form-group">
-						<label for="cat">Новая категория:</label>
+						<label for="cat">Категория:</label>
 						<input type="text" class="form-control" name="title" id="cat">
 						<label for="description">описание:</label>
 						<input type="text" class="form-control" name="description" id="description">
@@ -20,15 +20,109 @@
 				{{#each category}}
 
 					<h3>
-						{{title}}
+						<a class="edit" data-id="{{_id}}" href="">{{title}}</a>
+						<span class="glyphicon glyphicon-pencil edit" data-id="{{_id}}" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-remove-sign delete" data-id="{{_id}}" aria-hidden="true"></span>
 					</h3>
 					{{description}}
 
 				{{/each}}
 
 
+				<!-- Modal -->
+				<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">Редактор</h4>
+							</div>
+							<div class="modal-body">
+								<div id="modal-body">
+									<form id="edit-form">
+										<label for="editCat">Категория:</label>
+										<input type="text" class="form-control" name="title" id="editCat">
+										<label for="editDescription">описание:</label>
+										<input type="text" class="form-control" name="description" id="editDescription">
+									</form>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+								<button type="button" class="btn btn-primary" id="save" data-id="">Сохранить</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+
+
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+	$(function(){
+
+
+		var editModal = $('#edit');
+
+		// GET
+		$('.edit').on('click', function(e) {
+			e.preventDefault();
+
+			$.ajax({
+				type: 'GET',
+				url: 'categories/'+$(this).data('id'),
+				dataType: 'json'
+			}).success(function(response) {
+				$('#editCat').val(response.title);
+				$('#editDescription').val(response.description);
+				$('#save').attr( 'data-id', response._id );
+				editModal.modal('show');
+			});
+
+		});
+
+		// DELETE
+		$('.delete').on('click', function(e) {
+			e.preventDefault();
+
+			var result = confirm('Точно удалить? Обратно не воротишь...');
+
+			if (result) {
+				$.ajax({
+					type: 'DELETE',
+					url: 'categories/'+$(this).data('id')
+				}).success( function() {
+					location.reload();
+				});
+			}
+
+		});
+
+		// PUT
+		$('#save').on('click', function(e){
+			e.preventDefault();
+			$.ajax({
+				method : 'PUT',
+				url: 'categories/'+$(this).data('id'),
+				data: $('#edit-form').serialize(),
+				success: function(data){
+					editModal.modal('hide');
+					location.reload();
+				}
+			});
+		});
+
+
+
+
+	});
+
+
+
+</script>
 <!-- /#page-content-wrapper -->

@@ -15,12 +15,19 @@ router.route('/categories')
 		var category = new Category();
 
 		category.title = req.body.title;
+		if (!category.title) {
+			res.redirect('/api/categories');
+			return;
+		}
+
 		category.slug = getSlug( category.title );
 		category.description = req.body.description;
 
 		// save and check for errors
 		category.save(function(err) {
-			if (err) throw err;
+			if (err) {
+				res.redirect('/api/categories')
+			}
 
 			 
 			res.redirect('/api/categories')
