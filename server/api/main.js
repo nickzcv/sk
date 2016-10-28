@@ -6,10 +6,10 @@ var router = express.Router();              // get an instance of the express Ro
 
 /* Api main page. */
 router.get('/', function(req, res) {
-	res.render('api-home', res.locals.template_data = {
-		layout: 'api',
+	res.render('404', res.locals.template_data = {
+		layout: 'main',
 		active: { home: true },
-		meta_title: 'Панель управления сайтом'
+		meta_title: 'Обновляется'
 	});
 });
 
