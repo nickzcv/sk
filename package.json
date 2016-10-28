@@ -12,6 +12,8 @@
     "serve-favicon"  : "latest",
     "speakingurl": "latest",
     "express-handlebars": "latest",
-    "basic-auth": "latest"
+    "basic-auth": "latest",
+    "multer": "latest",
+    "mime": "latest"
   }
 }

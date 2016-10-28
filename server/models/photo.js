@@ -2,9 +2,10 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var PhotoSchema   = new Schema({
-	title: { type: String, required: true},
-	slug: { type: String, required: true, unique: true },
-	description:  String
+	filename: { type: String, required: true, unique: true },
+	title: { type: String },
+	isMain: { type: Boolean, default: false },
+	category : { type: String }
 });
 
 module.exports = mongoose.model('Photo', PhotoSchema);

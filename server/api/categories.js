@@ -26,7 +26,8 @@ router.route('/categories')
 		// save and check for errors
 		category.save(function(err) {
 			if (err) {
-				res.redirect('/api/categories')
+				res.redirect('/api/categories');
+				return;
 			}
 
 			 
@@ -92,6 +93,19 @@ router.route('/categories/:category_id')
 		});
 	});
 
+////
+router.route('/categories-list')
+
+	// get all (accessed at GET /api/categories)
+	.get(function(req, res) {
+
+		Category.find(function(err, category) {
+			if (err) throw err;
+
+			res.json(category);
+
+		});
+	});
 
 
 module.exports = router;

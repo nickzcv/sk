@@ -1,6 +1,6 @@
 #menu-toggle {
-    background-color: #5e7480;
-    color: #fff;
+    background-color: #fff;
+    color: #666;
 }
 
 form {
@@ -21,4 +21,8 @@ h3 {
     color: red;
     margin-left: 10px;
     cursor: pointer;
+}
+
+#editImg {
+    width: 100%;
 }

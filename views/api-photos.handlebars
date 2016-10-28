@@ -6,18 +6,159 @@
 				<h1>{{meta_title}}</h1>
 
 
-				<form>
+				<form enctype="multipart/form-data" method="post">
 					<div class="form-group">
 						<label for="exampleInputFile">Фото:</label>
-						<input type="file" class="form-control-file" id="photo" aria-describedby="Photo">
-						<small id="fileHelp" class="form-text text-muted">Любое изображение .jpg .png .gif  и тд</small>
+						<input type="file" name="photo" class="form-control-file" id="photo" aria-describedby="Photo">
+						<small id="fileHelp" class="form-text text-muted">Можно загружать любые изображения.</small>
+
+						<div class="checkbox">
+							<label><input type="checkbox" name="isMain">Показывать на главной?</label>
+						</div>
+						<div class="form-group">
+							<label for="title">Описание:</label>
+							<input type="text" class="form-control" name="title" id="title">
+						</div>
+						<div class="form-group">
+							<label for="cat">Категория:</label>
+							<select class="form-control" id="cat" name="category">
+							</select>
+						</div>
 					</div>
+
 
 					<button type="submit" class="btn btn-primary">Загрузить</button>
 				</form>
+
+
+				{{#each photogr}}
+
+					 <span style="display: inline-block; margin: 10px">
+						 <img class="edit" src="../photos/{{filename}}" alt="{{title}}" data-id="{{_id}}" width="250" >
+					 </span>
+
+				{{/each}}
+
+
+				<!-- Modal -->
+				<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+								<h4 class="modal-title" id="myModalLabel">Редактор</h4>
+							</div>
+							<div class="modal-body">
+								<div id="modal-body">
+									<img id="editImg" src="" data-id="" >
+									<form id="edit-form">
+										<div class="checkbox">
+											<label><input type="checkbox" name="isMain">Показывать на главной?</label>
+										</div>
+										<div class="form-group">
+											<label for="titleEdit">Описание:</label>
+											<input type="text" class="form-control" name="title" id="titleEdit">
+										</div>
+										<div class="form-group">
+											<label for="catEdit">Категория:</label>
+											<select class="form-control" id="catEdit" name="category">
+											</select>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+								<button type="button" class="btn btn-primary" id="save" data-id="">Сохранить</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
 
 			</div>
 		</div>
 	</div>
 </div>
 <!-- /#page-content-wrapper -->
+
+<script>
+
+	$(function(){
+
+		var editModal = $('#edit');
+
+		$.ajax({
+			type: 'GET',
+			url: '/api/categories-list',
+			dataType: 'json'
+		}).success( function(data) {
+			initSelect(data);
+		});
+
+
+		function initSelect(data) {
+			var select = $('#cat');
+
+			for (var i = 0; i < data.length; i++){
+				var option=$('<option></option>');
+				option.attr('value',data[i]._id);
+				option.text(data[i].title);
+				select.append(option);
+			}
+		}
+
+
+		// GET
+		$('.edit').on('click', function(e) {
+			e.preventDefault();
+
+			$.ajax({
+				type: 'GET',
+				url: 'photos/'+$(this).data('id'),
+				dataType: 'json'
+			}).success(function(response) {
+				$('#editImg').attr( 'data-id', response._id ).attr( 'src', '../photos/'+response.filename );
+				$('#titleEdit').val(response.title);
+				editSelect(response._id);
+				editModal.modal('show');
+			});
+
+		});
+
+
+		function editSelect(id) {
+			var select = $('#catEdit');
+			select.empty();
+
+			$.ajax({
+				type: 'GET',
+				url: '/api/categories-list',
+				dataType: 'json'
+			}).success( function(data) {
+
+				for (var i = 0; i < data.length; i++){
+					var option=$('<option></option>');
+					option.attr('value',data[i]._id);
+					option.text(data[i].title);
+
+					console.log(data[i]._id)
+
+					if (data[i]._id == id) {
+						option.attr('selected');
+
+
+					}
+
+					select.append(option);
+				}
+			});
+
+
+		}
+
+
+	});
+
+</script>
