@@ -40,6 +40,7 @@ router.route('/photos')
 		photo.filename = req.file.filename;
 		photo.title = req.body.title;
 		photo.category = req.body.category;
+		photo.updated_at = new Date();
 
 		photo.isMain = req.body.isMain ? true : false;
 
@@ -57,7 +58,7 @@ router.route('/photos')
 
 	.get(function(req, res) {
 
-		Photo.find(function(err, photo) {
+		Photo.find( {}, null, {sort: {updated_at: -1}}, function(err, photo) {
 			if (err) throw err;
 
 			res.render('api-photos', res.locals.template_data = {
@@ -66,8 +67,9 @@ router.route('/photos')
 				meta_title: 'Управление фотографиями',
 				photogr: photo
 			});
-
+			
 		});
+		
 	});
 
 
@@ -81,6 +83,10 @@ router.route('/photos/:photo_id')
 
 			res.json(photo);
 		});
+
+		Photo.count({}, function( err, count){
+			console.log( "Number of Photo:", count );
+		})
 	})
 
 	// update
@@ -89,7 +95,9 @@ router.route('/photos/:photo_id')
 			if (err) throw err;
 
 			photo.title = req.body.title;
-
+			photo.category = req.body.category;
+			photo.isMain = req.body.isMain ? true : false;
+			photo.updated_at = new Date();
 
 			photo.save(function(err) {
 				if (err) throw err;
@@ -109,6 +117,17 @@ router.route('/photos/:photo_id')
 
 			res.json({ message: 'Successfully deleted' });
 		});
+	});
+
+
+router.route('/photos-total')
+
+	.get(function(req, res) {
+		Photo.count({}, function( err, count){
+			if (err) throw err;
+
+			res.json(count);
+		})
 	});
 
 

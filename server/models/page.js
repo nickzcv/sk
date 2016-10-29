@@ -2,15 +2,15 @@ var mongoose     = require('mongoose');
 var Schema       = mongoose.Schema;
 
 var PageSchema   = new Schema({
+	category : { type: String, required: true},
 	title: { type: String, required: true},
 	url: { type: String, required: true, unique: true },
 	description:  String,
-	text:  String,
+	content:  String,
 	img: String,
 	created_at: Date,
 	updated_at: Date,
-	main: { type: Boolean, default: false },
-	categories : []
+	isMain: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model('Page', PageSchema);

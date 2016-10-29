@@ -13,15 +13,16 @@ router.route('/pages')
 
 		var page = new Page();
 
+		page.category = req.body.category;
 		page.title = req.body.title;
 		page.url = getSlug( page.title );
 		page.description = req.body.description;
-		page.text = req.body.text;
+		page.content = req.body.content;
 		page.img = req.body.img;
 		page.created_at = new Date();
 		page.updated_at = new Date();
-		page.categories = req.body.categories;
-		page.main = req.body.main;
+
+		page.isMain = req.body.isMain ? true : false;
 
 		// save and check for errors
 		page.save(function(err) {
@@ -35,13 +36,18 @@ router.route('/pages')
 
 	.get(function(req, res) {
 
-		Page.find(function(err, page) {
-			if (err)
-				res.send(err);
+		Page.find( {}, null, {sort: {created_at: -1}}, function(err, page) {
+			if (err) throw err;
 
-			res.json(page);
+			res.render('api-pages', res.locals.template_data = {
+				layout: 'api',
+				active: { pages: true },
+				meta_title: 'Управление страницами сайта',
+				pages: page
+			});
 
 		});
+
 	});
 
 
@@ -63,14 +69,15 @@ router.route('/pages/:page_id')
 			if (err)
 				res.send(err);
 
+			page.category = req.body.category;
 			page.title = req.body.title;
 			page.url = getSlug( page.title );
 			page.description = req.body.description;
-			page.text = req.body.text;
+			page.content = req.body.content;
 			page.img = req.body.img;
 			page.updated_at = new Date();
-			page.categories = req.body.categories;
-			page.main = req.body.main;
+
+			page.isMain = req.body.isMain ? true : false;
 
 
 			page.save(function(err) {
@@ -93,6 +100,17 @@ router.route('/pages/:page_id')
 
 			res.json({ message: 'Successfully deleted' });
 		});
+	});
+
+
+router.route('/pages-total')
+
+	.get(function(req, res) {
+		Page.count({}, function( err, count){
+			if (err) throw err;
+
+			res.json(count);
+		})
 	});
 
 
