@@ -11,7 +11,7 @@
 				<p class="lead">Статистика сайта:</p>
 				<p>Фотографий: <b id="photo">0</b></p>
 				<p>Новостей: <b>0</b></p>
-				<p>Страниц: <b>0</b></p>
+				<p>Страниц: <b id="pages">0</b></p>
 
 
 			</div>
@@ -31,6 +31,16 @@
 			dataType: 'json'
 		}).success( function(data) {
 			$('#photo').html(data)
+		});
+
+
+
+		$.ajax({
+			type: 'GET',
+			url: '/api/pages-total',
+			dataType: 'json'
+		}).success( function(data) {
+			$('#pages').html(data)
 		});
 
 
