@@ -17,7 +17,6 @@ router.route('/pages')
 		page.content = req.body.content;
 		if (!page.title || !page.content) {
 			res.redirect('/api/pages');
-			console.log('test1');
 			return;
 		}
 
@@ -34,9 +33,9 @@ router.route('/pages')
 		// save and check for errors
 		page.save(function(err) {
 			if (err)
-				res.send(err);
+				res.redirect('/api/pages');
 
-			res.json({ message: 'Page created!' });
+			res.redirect('/api/pages');
 		});
 
 	})

@@ -83,10 +83,6 @@ router.route('/photos/:photo_id')
 
 			res.json(photo);
 		});
-
-		Photo.count({}, function( err, count){
-			console.log( "Number of Photo:", count );
-		})
 	})
 
 	// update

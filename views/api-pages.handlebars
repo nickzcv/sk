@@ -6,6 +6,20 @@
 			<div class="col-lg-12">
 				<h1>{{meta_title}}</h1>
 
+				{{#each pages}}
+
+					<h3>
+						<a class="edit" data-id=" " href="">{{title}}</a>
+						<span class="glyphicon glyphicon-pencil edit" data-id=" " aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-remove-sign delete" data-id="{{_id}}" aria-hidden="true"></span>
+					</h3>
+					<hr>
+
+				{{/each}}
+
+
+
+				<h3>Создание новой страницы:</h3>
 
 				<form method="post">
 					<div class="form-group">
@@ -27,7 +41,7 @@
 						</div>
 						<div class="form-group">
 							<label for="content">Содержание страницы:</label>
-							<textarea class="form-control" rows="5" id="content"></textarea>
+							<textarea class="form-control" rows="5" name="content" id="content"></textarea>
 						</div>
 					</div>
 
@@ -36,53 +50,10 @@
 				</form>
 
 
-				{{#each pages}}
-
-					<h3>
-						<a class="edit" data-id="{{_id}}" href="">{{title}}</a>
-						<span class="glyphicon glyphicon-pencil edit" data-id="{{_id}}" aria-hidden="true"></span>
-						<span class="glyphicon glyphicon-remove-sign delete" data-id="{{_id}}" aria-hidden="true"></span>
-					</h3>
-
-				{{/each}}
 
 
-				<!-- Modal -->
-				<div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-					<div class="modal-dialog" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-								<h4 class="modal-title" id="myModalLabel">Редактор</h4>
-							</div>
-							<div class="modal-body">
-								<div id="modal-body">
-									<img id="editImg" src="" data-id="" >
-									<form id="edit-form">
-										<div class="checkbox">
-											<label><input type="checkbox" name="isMain" id="isMain">Показывать на главной?</label>
-										</div>
-										<div class="form-group">
-											<label for="titleEdit">Описание:</label>
-											<input type="text" class="form-control" name="title" id="titleEdit">
-										</div>
-										<div class="form-group">
-											<label for="catEdit">Категория:</label>
-											<select class="form-control" id="catEdit" name="category">
-											</select>
-										</div>
-									</form>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-danger" id="delete" data-id="">Удалить</button>
 
-								<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-								<button type="button" class="btn btn-primary" id="save" data-id="">Сохранить</button>
-							</div>
-						</div>
-					</div>
-				</div>
+
 
 
 
@@ -95,9 +66,7 @@
 <script>
 
 	$(function(){
-
-		var editModal = $('#edit');
-
+ 
 		$.ajax({
 			type: 'GET',
 			url: '/api/categories-list',
@@ -118,70 +87,16 @@
 			}
 		}
 
-
-		// GET
-		$('.edit').on('click', function(e) {
-			e.preventDefault();
-
-			$.ajax({
-				type: 'GET',
-				url: 'photos/'+$(this).data('id'),
-				dataType: 'json'
-			}).success(function(response) {
-				$('#editImg').attr( 'data-id', response._id ).attr( 'src', '../photos/'+response.filename );
-				$('#titleEdit').val(response.title);
-				$('#save').attr( 'data-id', response._id );
-				$('#delete').attr( 'data-id', response._id );
-
-				if (response.isMain) {
-					$('#isMain').prop('checked', true);
-				} else {
-					$('#isMain').prop('checked', false);
-				}
-
-				editSelect(response.category);
-				editModal.modal('show');
-			});
-
-		});
-
-
-		function editSelect(id) {
-			var select = $('#catEdit');
-			select.empty();
-
-			$.ajax({
-				type: 'GET',
-				url: '/api/categories-list',
-				dataType: 'json'
-			}).success( function(data) {
-
-				for (var i = 0; i < data.length; i++){
-					var option=$('<option></option>');
-					var dataId = data[i]._id;
-
-					option.attr('value',dataId);
-					option.text(data[i].title);
-
-					if (dataId == id) {
-						option.attr('selected', true);
-					}
-					select.append(option);
-				}
-			});
-
-		}
-
 		// DELETE
-		$('#delete').on('click', function(e) {
+		$('.delete').on('click', function(e) {
 			e.preventDefault();
 
-			var result = confirm('Точно удалить? Обратно не вернешь...');
+			var result = confirm('Точно удалить?');
 
 			if (result) {
 				$.ajax({
 					type: 'DELETE',
-					url: 'photos/'+$(this).data('id')
+					url: 'pages/'+$(this).data('id')
 				}).success( function() {
 					location.reload();
 				});
@@ -189,19 +104,6 @@
 
 		});
 
-		// PUT
-		$('#save').on('click', function(e){
-			e.preventDefault();
-			$.ajax({
-				method : 'PUT',
-				url: 'photos/'+$(this).data('id'),
-				data: $('#edit-form').serialize(),
-				success: function(data){
-					editModal.modal('hide');
-					location.reload();
-				}
-			});
-		});
 
 
 	});
