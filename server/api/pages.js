@@ -13,12 +13,19 @@ router.route('/pages')
 
 		var page = new Page();
 
-		page.category = req.body.category;
 		page.title = req.body.title;
+		page.content = req.body.content;
+		if (!page.title || !page.content) {
+			res.redirect('/api/pages');
+			console.log('test1');
+			return;
+		}
+
+		page.category = req.body.category;
+
 		page.url = getSlug( page.title );
 		page.description = req.body.description;
-		page.content = req.body.content;
-		page.img = req.body.img;
+
 		page.created_at = new Date();
 		page.updated_at = new Date();
 

@@ -7,13 +7,13 @@
 				<h1>{{meta_title}}</h1>
 
 
-				<form enctype="multipart/form-data" method="post">
+				<form method="post">
 					<div class="form-group">
 						<div class="checkbox">
 							<label><input type="checkbox" name="isMain">Это основная страница?</label>
 						</div>
 						<div class="form-group">
-							<label for="title">Заголовок:</label>
+							<label for="title">Название Страницы:</label>
 							<input type="text" class="form-control" name="title" id="title">
 						</div>
 						<div class="form-group">
@@ -22,7 +22,7 @@
 							</select>
 						</div>
 						<div class="form-group">
-							<label for="description">Краткое содержание:</label>
+							<label for="description">Краткое содержание <i>(для поисковиков)</i>:</label>
 							<input type="text" class="form-control" name="description" id="description">
 						</div>
 						<div class="form-group">
@@ -36,11 +36,13 @@
 				</form>
 
 
-				{{#each photogr}}
+				{{#each pages}}
 
-					 <span style="display: inline-block; margin: 10px">
-						 <img class="edit" src="../photos/{{filename}}" alt="{{title}}" data-id="{{_id}}" width="200" >
-					 </span>
+					<h3>
+						<a class="edit" data-id="{{_id}}" href="">{{title}}</a>
+						<span class="glyphicon glyphicon-pencil edit" data-id="{{_id}}" aria-hidden="true"></span>
+						<span class="glyphicon glyphicon-remove-sign delete" data-id="{{_id}}" aria-hidden="true"></span>
+					</h3>
 
 				{{/each}}
 
