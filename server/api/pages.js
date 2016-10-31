@@ -75,16 +75,22 @@ router.route('/pages/:page_id')
 			if (err)
 				res.send(err);
 
-			page.category = req.body.category;
 			page.title = req.body.title;
+			page.content = req.body.content;
+			if (!page.title || !page.content) {
+				res.redirect('/api/pages');
+				return;
+			}
+
+			page.category = req.body.category;
+
 			page.url = getSlug( page.title );
 			page.description = req.body.description;
-			page.content = req.body.content;
-			page.img = req.body.img;
+
+			page.created_at = new Date();
 			page.updated_at = new Date();
 
 			page.isMain = req.body.isMain ? true : false;
-
 
 			page.save(function(err) {
 				if (err)
