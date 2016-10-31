@@ -1,1 +1,89 @@
-photos page
+<div id="content-wrapper" class="site-content">
+	<div class="page-title-cont container-fluid" data-effect="parallax">
+		<div class="row">
+			<div class="page-header">
+				<div class="background-image" id="background-image-101"></div>
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row">
+						<div class="col-xs-12 col-md-12 display-table">
+							<div class="title-wrapper fadeIn">
+								<h1>
+									{{meta_title}}
+								</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container cont-padding">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="page-content">
+					{{#each photogr}}
+
+						<div class="photo-item" style="background: url('/photos/{{filename}}');background-size: cover"  data-id="{{_id}}"></div>
+
+					{{/each}}
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div class="modal fade" id="show" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 150px">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title" id="photoTitle"></h4>
+					</div>
+					<div class="modal-body">
+						<div id="modal-body">
+							<img id="photo" src="" data-id="" >
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<script>
+
+	(function($) {
+
+		var modal = $('#show');
+
+
+
+		// GET
+		$('.photo-item').on('click', function(e) {
+			e.preventDefault();
+
+			$.ajax({
+				type: 'GET',
+				url: '/api/photos/'+$(this).data('id'),
+				dataType: 'json'
+			}).success(function(response) {
+				$('#photo').attr( 'data-id', response._id ).attr( 'src', response.filename );
+				$('#photoTitle').html(response.title);
+
+				//modalSelect(response.category);
+				modal.modal('show');
+			});
+
+		});
+
+
+
+	})(jQuery);
+
+</script>

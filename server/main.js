@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+var Photo = require('./models/photo');
 
 
 // middleware specific to this router
@@ -20,17 +21,24 @@ router.get('/', function(req, res) {
 
 /* Photo archive */
 router.get('/photos', function(req, res) {
-    res.render('photos', res.locals.template_data = {
-        layout: 'main',
-        meta_title: 'Фотоархив компании СтройКрепость'
+    Photo.find( {}, null, {sort: {updated_at: -1}}, function(err, photo) {
+        if (err) throw err;
+
+        res.render('photos', res.locals.template_data = {
+            layout: 'inner',
+            active: { photos: true },
+            meta_title: 'Фотоархив компании',
+            photogr: photo
+        });
+
     });
 });
 
 /* Contacts page. */
 router.get('/contacts', function(req, res) {
     res.render('contacts', res.locals.template_data = {
-        layout: 'main',
-        meta_title: 'Контакты компании СтройКрепость'
+        layout: 'inner',
+        meta_title: 'Контакты'
     });
 });
 

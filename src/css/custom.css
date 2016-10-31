@@ -690,7 +690,6 @@ index-4-custom css
 #aio-icon-1214,
 #aio-icon-1215{
     background:#ffffff;
-    border-style:;
     border-color:#333333;
     border-width:1px;
     width:60px;
@@ -961,7 +960,7 @@ index 7 css
 }
 #uvc-sub-heading-077{
      
-    fo nt-weight:normal;
+    font-weight:normal;
     font-style:normal;
     color:#2e3841;
     margin-top:15px;
@@ -981,8 +980,7 @@ index 7 css
     
     font-weight:normal !important;
     font-size:18px !important;
-    width:px !important;
-    min-height:px !important;
+
     padding:15px 50px !important;
     border:none !important;
     background: #f7c605 !important;
@@ -1967,4 +1965,16 @@ a.shopping-cart {
 .top-footer {
     padding: 0;
     height: 666px;
+}
+
+.cont-padding {
+    padding: 60px 15px;
+}
+
+.photo-item {
+    display: inline-block;
+    width: 250px;
+    height: 200px;
+    margin: 0 20px 20px 0;
+    cursor: pointer;
 }

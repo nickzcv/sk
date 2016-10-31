@@ -97,7 +97,7 @@ app.use('/api', photos);
 // Handle 404 (page not found).
 app.use(function (req, res) {
 	res.status(404)
-		.render('home', res.locals.template_data = {
+		.render('404', res.locals.template_data = {
 		layout: 'main',
 		meta_title: ''
 	});
