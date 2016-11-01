@@ -5,12 +5,6 @@ var Photo = require('./models/photo');
 var Page = require('./models/page');
 
 
-// middleware specific to this router
-router.use(function timeLog(req, res, next) {
-  //console.log('Time: ', Date.now());
-  next();
-});
-
 
 /* Get Main pages*/
 router.get('/main-pages', function(req, res) {
@@ -52,6 +46,12 @@ router.get('/products', function(req, res) {
         });
 
     });
+});
+
+
+/* pages */
+router.get('/page/:page_id', function(req, res) {
+   //page code here
 });
 
 
