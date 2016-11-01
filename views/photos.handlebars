@@ -24,32 +24,15 @@
 				<div class="page-content">
 					{{#each photogr}}
 
-						<div class="photo-item" style="background: url('/photos/{{filename}}');background-size: cover"  data-id="{{_id}}"></div>
+					<a class="fancybox" rel="group" href="/photos/{{filename}}">
+						<div class="photo-item " style="background: url('/photos/{{filename}}');background-size: cover"  data-id="{{_id}}"></div>
+					</a>
 
 					{{/each}}
 				</div>
 			</div>
 		</div>
 
-		<!-- Modal -->
-		<div class="modal fade" id="show" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="margin-top: 150px">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="photoTitle"></h4>
-					</div>
-					<div class="modal-body">
-						<div id="modal-body">
-							<img id="photo" src="" data-id="" >
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
 </div>
 
@@ -58,32 +41,6 @@
 
 <script>
 
-	(function($) {
 
-		var modal = $('#show');
-
-
-
-		// GET
-		$('.photo-item').on('click', function(e) {
-			e.preventDefault();
-
-			$.ajax({
-				type: 'GET',
-				url: '/api/photos/'+$(this).data('id'),
-				dataType: 'json'
-			}).success(function(response) {
-				$('#photo').attr( 'data-id', response._id ).attr( 'src', response.filename );
-				$('#photoTitle').html(response.title);
-
-				//modalSelect(response.category);
-				modal.modal('show');
-			});
-
-		});
-
-
-
-	})(jQuery);
 
 </script>
