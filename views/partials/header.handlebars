@@ -21,6 +21,9 @@
 							<a href="tel:+375291999339"><i
 									class="fa fa-phone"></i> +375 29 1999339</a>
 						</li>
+						<li>
+							<a href="tel:80177730861">факс  &nbsp;&nbsp;<i class="fa fa-fax"></i> 8 0177 730861 </a>
+						</li>
 					</ul>
 				</div>
 			</div>
@@ -34,8 +37,11 @@
 						</a>
 					</li>
 					-->
+
 					<li>
-						<a href="tel:80177730861">факс  &nbsp;&nbsp;<i class="fa fa-fax"></i> 8 0177 730861 </a>
+						<a href="mailto:stroykrepost@mail.ru" target="_blank">
+							<i class="fa fa-envelope-o"></i> stroykrepost@mail.ru
+						</a>
 					</li>
 				</ul>
 			</div>
@@ -57,14 +63,12 @@
 					<div class="primary-menu">
 						<div class="menu-class navbar-left">
 							<ul class="main-navigation sf-menu nav navbar-nav menu">
-								<li id="menu-item-1217" class="menu-item current-menu-item">
-									<a href="/" class="pro-link with-hover pro-link-depth-0 pro-sticky-item"><i class="pro-in im im-home6"></i>Главная</a>
-								</li>
-								<li><a href="/" class="dropdown-toggle parent pro-link pro-link-depth-0 pro-sticky-item">Продукция</a></li>
-								<li><a href="/photos" class="dropdown-toggle parent pro-link pro-link-depth-0 pro-sticky-item">Фотоархив</a></li>
+								<li {{#if active.home}}class="menu-item current-menu-item"{{/if}}><a href="/" class="pro-link  pro-link-depth-0 pro-sticky-item "><i class="pro-in im im-home6"></i>Главная</a></li>
+								<li class="{{#if active.prod}}menu-item current-menu-item{{/if}} navsk"><a href="/prod" class=" pro-link pro-link-depth-0 pro-sticky-item">Продукция</a></li>
 
 
-								<li><a href="/" class="dropdown-toggle parent pro-link pro-link-depth-0 pro-sticky-item">Контакты</a></li>
+								<li {{#if active.photos}}class="menu-item current-menu-item"{{/if}}><a href="/photos" class=" pro-link pro-link-depth-0 pro-sticky-item">Фотоархив</a></li>
+								<li {{#if active.contacts}}class="menu-item current-menu-item"{{/if}}><a href="/contacts" class=" pro-link pro-link-depth-0 pro-sticky-item">Контакты</a></li>
 
 							</ul>
 						</div>
@@ -89,11 +93,12 @@
 			<div id="mobile-menu"
 				 class="navbar-left  accordion-menu">
 				<ul class="menu">
-					<li><a href="">Главная</a></li>
-					<li><a href="">Продукция</a></li>
-					<li><a href="">Фотоархив</a></li>
-					<li><a href="">Контакты</a></li>
+					<li><a href="/">Главная</a></li>
+					<li class="navsk"><a href="/prod">Продукция</a></li>
 
+
+					<li><a href="/photos">Фотоархив</a></li>
+					<li><a href="/contacts">Контакты</a></li>
 				</ul>
 				<div class="clearfix"></div>
 				<div class="mobile-search">
@@ -122,10 +127,12 @@
 						<div class="menu-class navbar-nav navbar-left">
 							<ul id="menu-main-menu-2" class="main-navigation sf-menu nav navbar-nav menu">
 
-								<li><a href="" class=" pro-sticky-item">Главная</a></li>
-								<li><a href="" class=" pro-sticky-item">Продукция</a></li>
-								<li><a href="" class=" pro-sticky-item">Фотоархив</a></li>
-								<li><a href="" class=" pro-sticky-item">Контакты</a></li>
+								<li><a href="/" class=" pro-sticky-item">Главная</a></li>
+								<li class="navsk"><a href="/prod" class=" pro-sticky-item">Продукция</a></li>
+
+
+								<li><a href="/photos" class=" pro-sticky-item">Фотоархив</a></li>
+								<li><a href="/contacts" class=" pro-sticky-item">Контакты</a></li>
 
 							</ul>
 						</div>

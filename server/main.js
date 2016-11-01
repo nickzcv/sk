@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var Photo = require('./models/photo');
+var Page = require('./models/page');
 
 
 // middleware specific to this router
@@ -11,12 +12,28 @@ router.use(function timeLog(req, res, next) {
 });
 
 
+/* Get Main pages*/
+router.get('/main-pages', function(req, res) {
+    Page.find( { isMain : true } , function(err, page) {
+        if (err) throw err;
+
+        res.json(page);
+    });
+});
+
 /* Home page. */
 router.get('/', function(req, res) {
-    res.render('home', res.locals.template_data = {
-        layout: 'main',
-        meta_title: 'Производство и проектирование бытовок, домиков, беседок - компания СтройКрепость'
+    Photo.find( { isMain : true } , function(err, photos) {
+        if (err) throw err;
+
+        res.render('home', res.locals.template_data = {
+            layout: 'main',
+            active: { home: true },
+            meta_title: 'Производство и проектирование бытовок, домиков, беседок - компания СтройКрепость',
+            slides: photos
+        });
     });
+
 });
 
 
@@ -48,7 +65,8 @@ router.get('/photos/:photo_id', function(req, res) {
 router.get('/contacts', function(req, res) {
     res.render('contacts', res.locals.template_data = {
         layout: 'inner',
-        meta_title: 'Контакты'
+        meta_title: 'Контакты',
+        active: { contacts: true }
     });
 });
 
