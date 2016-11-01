@@ -21,6 +21,8 @@ router.get('/main-pages', function(req, res) {
     });
 });
 
+
+
 /* Home page. */
 router.get('/', function(req, res) {
     Photo.find( { isMain : true } , function(err, photos) {
@@ -34,6 +36,22 @@ router.get('/', function(req, res) {
         });
     });
 
+});
+
+
+/* Prod page */
+router.get('/products', function(req, res) {
+    Page.find( { isMain : false } , function(err, page) {
+        if (err) throw err;
+
+        res.render('products', res.locals.template_data = {
+            layout: 'inner',
+            active: { prod: true },
+            meta_title: 'Продукция компании',
+            products: page
+        });
+
+    });
 });
 
 
