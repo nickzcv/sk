@@ -32,8 +32,8 @@ router.route('/pages')
 
 		// save and check for errors
 		page.save(function(err) {
-			if (err)
-				res.redirect('/api/pages');
+			//if (err)
+			//	res.redirect('/api/pages');
 
 			res.redirect('/api/pages');
 		});

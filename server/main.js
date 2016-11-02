@@ -50,8 +50,18 @@ router.get('/products', function(req, res) {
 
 
 /* pages */
-router.get('/page/:page_id', function(req, res) {
-   //page code here
+router.get('/page/:url', function(req, res) {
+    Page.findOne( { url : req.params.url } , function(err, page) {
+        if (err) throw err;
+
+        res.render('page', res.locals.template_data = {
+            layout: 'inner',
+           // active: { prod: true },
+            meta_title: page.title,
+            pages: page
+        });
+
+    });
 });
 
 

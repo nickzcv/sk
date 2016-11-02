@@ -1978,3 +1978,15 @@ a.shopping-cart {
     margin: 0 20px 20px 0;
     cursor: pointer;
 }
+
+
+.page-content p{
+    color: #000;
+}
+
+.page-content a{
+    text-decoration: underline;
+}
+.page-content a:hover{
+    text-decoration: none;
+}
