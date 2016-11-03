@@ -34,7 +34,7 @@ router.get('/', function(req, res) {
         res.render('home', res.locals.template_data = {
             layout: 'main',
             active: { home: true },
-            meta_title: 'Производство и проектирование - компания СтройКрепость',
+            meta_title: 'Бытовки и модульные здания - компания СтройКрепость',
             slides: photos
         });
     });
