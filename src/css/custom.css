@@ -1990,3 +1990,15 @@ a.shopping-cart {
 .page-content a:hover{
     text-decoration: none;
 }
+
+.prodPhoto {
+    height: 200px;
+}
+
+.prod-photos-inner {
+    font-size: 18px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    background: rgba(223, 78, 0, 0.19);
+}

@@ -15,6 +15,15 @@ router.get('/main-pages', function(req, res) {
     });
 });
 
+/* Get 1 photo from category */
+router.get('/cat-one-photo/:cat_id', function(req, res) {
+    Photo.findOne( { category : req.params.cat_id } , function(err, photo) {
+        if (err) throw err;
+
+        res.json(photo);
+    });
+});
+
 
 
 /* Home page. */
@@ -25,7 +34,7 @@ router.get('/', function(req, res) {
         res.render('home', res.locals.template_data = {
             layout: 'main',
             active: { home: true },
-            meta_title: 'Производство и проектирование бытовок, домиков, беседок - компания СтройКрепость',
+            meta_title: 'Производство и проектирование - компания СтройКрепость',
             slides: photos
         });
     });
@@ -46,6 +55,33 @@ router.get('/products', function(req, res) {
         });
 
     });
+});
+
+
+/* Prod inner pages */
+router.get('/products/:url', function(req, res) {
+    Page.findOne( { url : req.params.url } , function(err, page) {
+        if (err) throw err;
+
+
+        // get photos by cat id
+        Photo.find( { category : page.category } , function(err, photos) {
+            if (err) throw err;
+
+            res.render('product', res.locals.template_data = {
+                layout: 'inner',
+                active: { prod: true },
+                meta_title: page.title,
+                pages: page,
+                photogr: photos
+            });
+
+
+        });
+        // ----------
+
+    });
+
 });
 
 
