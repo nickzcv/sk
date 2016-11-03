@@ -3,6 +3,7 @@ var router = express.Router();
 
 var Photo = require('./models/photo');
 var Page = require('./models/page');
+//var Category = require('./models/category');
 
 
 
@@ -21,6 +22,17 @@ router.get('/cat-one-photo/:cat_id', function(req, res) {
         if (err) throw err;
 
         res.json(photo);
+    });
+});
+
+
+/* home cat list*/
+router.get('/prod-list', function(req, res) {
+    Page.find( { isMain : false } , function(err, prod_list) {
+        if (err) throw err;
+
+        res.json(prod_list);
+
     });
 });
 
