@@ -125,8 +125,32 @@
    ultimate type writer
    ==========================*/
 	jQuery(function($) {
+
+		var strArr = [];
+
+		$.ajax({
+			type: 'GET',
+			url: '/prod-list',
+			dataType: 'json'
+		}).success( function(data) {
+
+
+
+			for (var i = 0; i < data.length; i++){
+
+				strArr.push(data[i].title);
+
+
+			}
+
+
+
+		});
+
+
+
 		$("#typed-14476637225684bafc8963b").typed({
-			strings: ["НЕ ТОЛЬКО КРЕПОСТИ", "НО И БЫТОВКИ", "ДОМА И ДОМИКИ", "А ТАКЖЕ ПРОЕКТИРУЕМ"],
+			strings: strArr,
 			typeSpeed: 25,
 			backSpeed: 0,
 			startDelay: 500,

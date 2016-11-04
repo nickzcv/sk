@@ -25,14 +25,14 @@
 					{{{pages.content}}}
 
 
-					<h4 class="prod-photos-inner">
-						 {{pages.title}} из фотоархива компании
+					<h4 style="margin: 50px 0">
+						<a href="#" class="pro-btn pro-btn-3d pro-btn-square pro-btn-3d-yellow pro-btn-xl pro-btn-block" style="text-decoration: none; cursor: default">{{pages.title}} из фотоархива компании</a>
 					</h4>
 
 
 					{{#each photogr}}
 
-						<a class="fancybox" rel="group" href="/photos/{{filename}}" title="{{title}}">
+						<a class="fancybox" rel="group" href="/photos/{{filename}}" title="{{title}}" style="text-decoration: none;">
 							<div class="photo-item " style="background: url('/photos/{{filename}}');background-size: cover"  data-id="{{_id}}"></div>
 						</a>
 
